@@ -45,6 +45,5 @@ export async function connect(){
         })
     } catch (error) {
         console.log("something went wrong while connecting to db, the error is", error);
-        
     }
 }
