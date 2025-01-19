@@ -1,5 +1,5 @@
 import 'next-auth';
-
+// TO MODIFY OR REDECLARE A TYPE OF NEXTAUTH
 declare module 'next-auth' {
   interface Session {
     user: {
@@ -10,7 +10,7 @@ declare module 'next-auth' {
     } & DefaultSession['user'];
   }
 
-  interface User {
+  interface User { 
     _id?: string;
     isVerified?: boolean;
     isAcceptingMessages?: boolean;
