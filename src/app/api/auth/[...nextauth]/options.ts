@@ -3,7 +3,7 @@ import  CredentialsProvider  from "next-auth/providers/credentials";
 import bcrypt from 'bcryptjs';
 import { dbConnect } from "@/lib/dbConfig";
 import UserModel from "@/model/user.model";
-
+22 
 export const authOptions : NextAuthOptions ={
     providers:[
         CredentialsProvider({ //CREDPROVIDER IS A METHOD OF NEXTAUTH
@@ -36,11 +36,9 @@ export const authOptions : NextAuthOptions ={
                         throw new Error('Please verify your account before logging in');
                     }
 
-                    const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password)
-
+                    const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password) //RETURNS A BOOLEAN
                     if(isPasswordCorrect){
                         console.log("user is authenticated");
-                        
                         return user
                     }else{
                         throw new Error("incorrect password")
@@ -75,7 +73,7 @@ export const authOptions : NextAuthOptions ={
           }    
     }, 
     pages:{
-        signIn: '/sign-in'
+        signIn: '/sign-in' //OVERWRITING DEFAULT SIGN INPAGE
     },
     session:{  
         strategy:"jwt"
