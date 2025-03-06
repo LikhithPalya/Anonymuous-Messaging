@@ -17,5 +17,5 @@ jobs:
       - name: Install Dependencies
         run: npm install  # Installs required packages
 
-      - name: Run Tests
-        run: npm test  # Executes your test suite
+      - name: Run Linter  
+        run: npm run lint  # Executes linting 
